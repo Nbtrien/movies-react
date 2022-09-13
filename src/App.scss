@@ -1,0 +1,51 @@
+@use './scss/variable' as *;
+@import './scss/mixins';
+
+body {
+    font-family: $font-family-sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+
+    background-color: $body-bg;
+    color: $txt-color;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+#page-content {
+    min-height: 1080px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 0 10% 0 10%;
+}
+.container {
+    @include mobile {
+        padding: 0px 10px;
+    }
+}
+.catalog {
+    .section-tltle {
+        position: relative;
+        display: block;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 30px;
+        h3 {
+            text-transform: capitalize;
+        }
+    }
+}

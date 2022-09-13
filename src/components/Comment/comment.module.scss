@@ -1,0 +1,132 @@
+.wrapper {
+    display: block;
+    width: 100%;
+    padding: 15px 15px;
+    margin-bottom: 15px;
+    background-color: rgba(5, 5, 5, 0.55);
+}
+.total {
+    padding-bottom: 10px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.line {
+    background-color: rgba(255, 255, 255, 0.45);
+    height: 0.1px;
+    width: 100%;
+    position: relative;
+}
+.enter-comment-wrapper {
+    padding: 10px 0px;
+    display: flex;
+    .enter-comment {
+        position: relative;
+        flex: 1;
+        margin-right: 15px;
+        textarea {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 52px;
+            width: 100%;
+            border-radius: 30px;
+            padding: 15px 25px;
+            outline: none;
+            resize: none;
+            background: #232323;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            color: #cdb5cd;
+            border: none;
+            overflow: hidden;
+        }
+    }
+    .btn-wrapper {
+        position: relative;
+        float: right;
+        padding-top: 15px;
+        padding-right: 15px;
+    }
+}
+
+.ava-round {
+    width: 70%;
+}
+.rounded-corners {
+    position: relative;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #999;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.comment-wrapper {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.section-name {
+    display: flex;
+    margin-bottom: 10px;
+}
+.username {
+    font-size: 15px;
+    line-height: 1;
+    font-family: SFProDisplay-Bold;
+    display: flex-end;
+    align-items: center;
+}
+.comment-time {
+    display: flex;
+    line-height: 1;
+    font-family: SFProDisplay-Bold;
+    align-items: flex-end;
+    margin-left: 25px;
+    font-size: 12px;
+    color: #cdb5cd;
+}
+.comment-content {
+    color: #cdb5cd;
+    font-size: 15px;
+}
+
+.section-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+.comment-action {
+    .action-section {
+        color: #cdb5cd;
+        margin-right: 5px;
+        font-size: 15px;
+        margin-right: 20px;
+        .action-icon {
+            font-size: inherit;
+            margin-right: 5px;
+        }
+        &:hover {
+            color: #ff4500;
+        }
+    }
+}
+a:hover {
+    color: #cdb5cd;
+    text-decoration: none;
+}
+.rep_comm {
+    margin-left: 70px;
+}
+.addrepcomm {
+    display: none;
+}

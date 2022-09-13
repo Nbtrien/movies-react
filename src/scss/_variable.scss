@@ -1,0 +1,34 @@
+// Body
+$body-bg: rgba(0, 0, 0, 0.9);
+
+// Typography
+$font-family-sans-serif: Arial, Helvetica, sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+$txt-color: #fff;
+$txt-hint-color: rgba(255, 250, 240, 0.5);
+
+$boder-radius: 5px;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+// Screen size
+$large-desktop-max-width: 4000px;
+$large-desktop-min-width: 3001px;
+$desktop-max-width: 3000px;
+$desktop-min-width: 1025px;
+$tablet-max-width: 1024px;
+$tablet-min-width: 481px;
+$mobile-max-width: 480px;
+$mobile-min-width: 0px;

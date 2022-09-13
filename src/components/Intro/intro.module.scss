@@ -1,0 +1,19 @@
+.intro {
+    display: flex;
+    line-height: 24px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    .property {
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-bold);
+        width: 100px;
+        min-width: 100px;
+        color: white;
+    }
+    .value {
+        text-transform: capitalize;
+        color: var(--txt-color-bland);
+        font-size: var(--font-size-base);
+        font-weight: var(--font-weight-light);
+    }
+}
