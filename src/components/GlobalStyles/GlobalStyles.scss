@@ -1,12 +1,13 @@
 // @use '../scss/variable' as *;
 // @import './scss/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
     // Body
-    --body-bg: rgba(0, 0, 0, 0.9);
+    --body-bg: #16181e;
 
     // Typography
-    --font-family-sans-serif: Arial, Helvetica, sans-serif;
+    --font-family-sans-serif: 'Montserrat', sans-serif;
     --font-size-base: 0.9rem;
     --line-height-base: 1.6;
 

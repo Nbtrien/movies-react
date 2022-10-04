@@ -23,6 +23,22 @@ $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
 
+//figma color
+$light: #f9f9f9;
+$primary: #00b9ae;
+$dark: #21242d;
+$bg: #16181e;
+
+//spacing
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+//border
+$borderRadius: 12px;
+
+//header height
+$headerHeight: 100px;
+
 // Screen size
 $large-desktop-max-width: 4000px;
 $large-desktop-min-width: 3001px;
@@ -32,3 +48,12 @@ $tablet-max-width: 1024px;
 $tablet-min-width: 481px;
 $mobile-max-width: 480px;
 $mobile-min-width: 0px;
+
+@mixin breakpoint($point) {
+    @if $point == md {
+        //768px
+        @media (min-width: 48em) {
+            @content;
+        }
+    }
+}

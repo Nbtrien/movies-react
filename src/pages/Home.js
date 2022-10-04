@@ -1,4 +1,5 @@
 import React from 'react';
+import Slider from '../components/Slider';
 import MovieSlider from '../components/MovieSlider';
 import MovieChart from '../components/MovieChart';
 import MovieBlock from '../components/MovieBlock';

@@ -4,7 +4,7 @@ import styles from './vote.module.scss';
 const cx = classNames.bind(styles);
 function Vote({ avgrating }) {
     const numberStars = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-    const [checked, setChecked] = useState(avgrating.toFixed());
+    const [checked, setChecked] = useState(avgrating);
     console.log(checked);
 
     return (

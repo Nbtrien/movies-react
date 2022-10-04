@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { DefaultLayout } from './layouts';
-// import './App.scss';
+import './App.scss';
 import { publicRoutes } from './config/routes';
 import ScrollToTop from './ScrollToTop';
 
