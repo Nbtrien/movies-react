@@ -33,7 +33,7 @@ function Watch() {
             try {
                 if (episode !== null) {
                     const response = await movieApi.getVideoId(id, episode);
-                    setVideoId(response.data.video_id);
+                    setVideoId(response.id);
                 }
             } catch (error) {
                 console.log(error);

@@ -15,27 +15,31 @@ const Video = (props) => {
     useEffect(() => {
         const getVideo = async () => {
             let response = null;
+            let url = null;
             try {
                 if (id !== undefined) {
                     response = await movieApi.getVideobyId(id);
+                    url = response.video_url.replace(/ /g, '%20');
                 } else if (type === VIDEO_TYPE.trailer) {
                     response = await movieApi.getTrailer(movie_id);
+                    url = response.trailer_url.replace(/ /g, '%20');
                 } else {
                     response = await movieApi.getVideo(movie_id, byType);
+                    url = response.video_url.replace(/ /g, '%20');
                 }
-                setvideoUrl(response.data);
+
+                setvideoUrl(url);
             } catch (error) {
                 console.log(error);
             }
         };
         getVideo();
     }, [props]);
-
     return (
         <>
             {videoUrl ? (
-                <Player key={videoUrl.url}>
-                    <source src={videoUrl.url} />
+                <Player key={videoUrl}>
+                    <source src={videoUrl} />
                 </Player>
             ) : (
                 <BouncingLoader />
@@ -44,4 +48,4 @@ const Video = (props) => {
     );
 };
 
-export default memo(Video);
+export default Video;

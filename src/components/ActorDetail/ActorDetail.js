@@ -18,7 +18,7 @@ const ActorDetail = ({ id }) => {
         const getActor = async () => {
             try {
                 const response = await movieApi.getActor(id);
-                setActor(response.data);
+                setActor(response);
             } catch (error) {
                 console.log(error);
             }

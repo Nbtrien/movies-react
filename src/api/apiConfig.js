@@ -1,5 +1,5 @@
 const apiConfig = {
-    baseUrl: 'http://tr-movies-api.herokuapp.com/api',
+    baseUrl: 'https://tr-movies-api.herokuapp.com/api',
     // baseUrl: 'localhost',
 };
 

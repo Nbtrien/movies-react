@@ -21,6 +21,7 @@ const EpisodeGrid = (props) => {
             try {
                 const response = await movieApi.getEpisodes(id, { params });
                 setEpisodes(response.data);
+                console.log(response.data);
             } catch (error) {
                 console.log(error);
             }

@@ -4,7 +4,7 @@ export const movieType = {
     popular_movie: 'view',
     new_movie: 'releasedate',
     top_rated: 'avgrating',
-    similar_movie: 'similarmovies',
+    similar_movie: 'similar',
     same_series: 'sameseries',
 };
 
@@ -27,7 +27,7 @@ const movieApi = {
         return axiosClient.get(url, params);
     },
     getMoviesbyActor: (id, params) => {
-        const url = 'movies/actor/' + id;
+        const url = 'actor/' + id + '/movies';
         return axiosClient.get(url, params);
     },
     getDetail: (id) => {
@@ -35,7 +35,7 @@ const movieApi = {
         return axiosClient.get(url);
     },
     getSimilarMovies: (id, similarType) => {
-        const url = 'movies/' + similarType + '/' + id;
+        const url = 'movie/' + id + '/' + similarType;
         return axiosClient.get(url);
     },
     getMoviesbyKey: (key, params) => {
@@ -43,7 +43,7 @@ const movieApi = {
         return axiosClient.get(url, params);
     },
     getTrailer: (id, params) => {
-        const url = 'trailer/' + id;
+        const url = 'movie/' + id + '/trailer';
         return axiosClient.get(url, params);
     },
     getVideobyId: (id, params) => {
@@ -51,19 +51,19 @@ const movieApi = {
         return axiosClient.get(url, params);
     },
     getVideo: (id, videoType, params) => {
-        const url = 'video' + videoType + '/' + id;
+        const url = 'movie/' + id + '/video';
         return axiosClient.get(url, params);
     },
     getVideoId: (movie_id, episode, params) => {
-        const url = 'video/movie/' + movie_id + '/' + episode;
+        const url = 'movie/' + movie_id + '/episode/' + episode + '/video_id';
         return axiosClient.get(url, params);
     },
     getComments: (id, params) => {
-        const url = 'comments/' + id;
+        const url = 'movie/' + id + '/comments';
         return axiosClient.get(url, params);
     },
     getEpisodes: (id, params) => {
-        const url = 'episodes/' + id;
+        const url = 'movie/' + id + '/episodes';
         return axiosClient.get(url, params);
     },
     getActor: (id, params) => {
