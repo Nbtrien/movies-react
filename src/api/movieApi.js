@@ -39,7 +39,7 @@ const movieApi = {
         return axiosClient.get(url);
     },
     getMoviesbyKey: (key, params) => {
-        const url = 'movies/search/' + key;
+        const url = 'search/movie/' + key;
         return axiosClient.get(url, params);
     },
     getTrailer: (id, params) => {
@@ -66,13 +66,41 @@ const movieApi = {
         const url = 'movie/' + id + '/episodes';
         return axiosClient.get(url, params);
     },
+    getActors: (params) => {
+        const url = 'actors';
+        return axiosClient.get(url, params);
+    },
+    getActorsbyMovie: (movie_id, params) => {
+        const url = 'movie/' + movie_id + '/actors';
+        return axiosClient.get(url, params);
+    },
     getActor: (id, params) => {
         const url = 'actor/' + id;
+        return axiosClient.get(url, params);
+    },
+    getGenres: (params) => {
+        const url = 'genres';
+        return axiosClient.get(url, params);
+    },
+    getCategories: (params) => {
+        const url = 'categories';
+        return axiosClient.get(url, params);
+    },
+    getCountries: (params) => {
+        const url = 'countries';
+        return axiosClient.get(url, params);
+    },
+    getTags: (params) => {
+        const url = 'tags';
         return axiosClient.get(url, params);
     },
     login: (params) => {
         const url = 'login';
         return axiosClient.post(url, params);
+    },
+    getSeries: (params) => {
+        const url = 'series';
+        return axiosClient.get(url, params);
     },
 };
 

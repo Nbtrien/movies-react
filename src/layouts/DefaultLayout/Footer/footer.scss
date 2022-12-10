@@ -187,6 +187,10 @@ p.footer-gd a:hover {
     color: #908f8f;
     display: block;
 }
+.footer.two, .footer.one, .footer.footer.three{
+    padding: unset; 
+    float: left;
+}
 #footer a.fb,
 a.fb1,
 a.fb2,

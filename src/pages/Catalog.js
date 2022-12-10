@@ -70,7 +70,7 @@ function Catalog() {
             console.log(error);
         }
     };
-    console.log(inValid);
+    // console.log(inValid);
     if (inValid === undefined) {
         return <PageNotFound />;
     }

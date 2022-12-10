@@ -1,3 +1,4 @@
+import classNames from 'classnames/bind';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './button.module.scss';
@@ -12,10 +13,13 @@ const Button = ({
     type,
     style,
     fontSize,
+    margin,
     padding,
+    classn,
     borderRadius,
     ...props
 }) => {
+    const cx = classNames.bind(styles);
     const [hover, setHover] = useState(false);
     const toggleHover = () => {
         setHover(!hover);
@@ -25,12 +29,14 @@ const Button = ({
         color: labelColor || 'white',
         padding: padding || '25px',
         fontSize: fontSize || '1.3rem',
+        margin: margin || '0',
     };
     const outlineStyles = {
         border: `1px solid ${btnColor}`,
         color: btnColor,
         backgroundColor: 'white',
         padding: padding || '25px',
+        margin: margin || '0',
         // font-size :
         fontSize: fontSize || '1.3rem',
     };
@@ -38,6 +44,7 @@ const Button = ({
         color: labelColor || 'white',
         backgroundColor: btnColor,
         padding: padding || '25px',
+        margin: margin || '0',
         fontSize: fontSize || '1.3rem',
     };
 
@@ -46,6 +53,7 @@ const Button = ({
         color: labelColor || 'white',
         borderRadius: borderRadius || '25px',
         padding: padding || '25px',
+        margin: margin || '0',
         fontSize: fontSize || '1.3rem',
     };
     const disabledStyle = {
@@ -54,12 +62,14 @@ const Button = ({
         color: labelColor || 'white',
         opacity: 0.4,
         padding: padding || '25px',
+        margin: margin || '0',
         fontSize: fontSize || '1.3rem',
     };
     const blockStyles = {
         backgroundColor: btnColor,
         color: labelColor || 'white',
         padding: padding || '25px',
+        margin: margin || '0',
         fontSize: fontSize || '1.3rem',
     };
     let btnStyle;
@@ -99,7 +109,8 @@ const Button = ({
                     {...props}
                     type='button'
                     onClick={!disabled ? onClick : () => {}}
-                    className={styles.btn}
+                    // className={styles.btn}
+                    className={cx('btn')}
                 >
                     {children}
                 </Link>
@@ -113,9 +124,10 @@ const Button = ({
                     onMouseEnter={toggleHover}
                     onMouseLeave={toggleHover}
                     {...props}
-                    type='button'
+                    type={props.submit || 'button'}
                     onClick={!disabled ? onClick : () => {}}
-                    className={styles.btn}
+                    // className={styles.btn}
+                    className={cx('btn')}
                 >
                     {children || 'button'}
                 </button>

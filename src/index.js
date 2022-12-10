@@ -5,12 +5,12 @@ import GlobalStyles from './components/GlobalStyles';
 import { AuthProvider } from './context/AuthProvider';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <GlobalStyles>
-            <AuthProvider>
-                <App />
-            </AuthProvider>
-        </GlobalStyles>
-    </React.StrictMode>,
+    // <React.StrictMode>
+    <GlobalStyles>
+        <AuthProvider>
+            <App />
+        </AuthProvider>
+    </GlobalStyles>,
+    //  </React.StrictMode>,
     document.getElementById('root'),
 );

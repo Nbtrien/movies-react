@@ -15,6 +15,7 @@ function ChartItem(props) {
                 keyword: movieType.popular_movie,
                 category: props.type,
                 page: 1,
+                limit: 12,
             };
             try {
                 const response = await movieApi.getMovies({ params });

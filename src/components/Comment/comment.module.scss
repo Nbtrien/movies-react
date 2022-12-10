@@ -111,12 +111,23 @@
         margin-right: 5px;
         font-size: 15px;
         margin-right: 20px;
+        background-color: unset;
         .action-icon {
             font-size: inherit;
             margin-right: 5px;
         }
         &:hover {
             color: #ff4500;
+        }
+        &:focus {
+            outline: none;
+        }
+
+        &:disabled {
+            color: rgb(82, 81, 81);
+            &:hover {
+                color: rgb(82, 81, 81);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
-import { Fragment, useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Fragment, useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import styles from '../../layouts/LoginLayout/login.module.scss';
 import FormInput from '../FormInput/FormInput';
 import useAuth from '../../hooks/useAuth';
@@ -9,8 +9,14 @@ import movieApi from '../../api/movieApi';
 const cx = classNames.bind(styles);
 
 function FormLogin() {
-    const { setAuth } = useAuth();
+    const { auth, setAuth, setIsUnexpired } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
+    if (auth.user) {
+        navigate(from);
+    }
 
     const [values, setValues] = useState({
         email: '',
@@ -48,11 +54,13 @@ function FormLogin() {
             };
             const response = await movieApi.login(params);
 
-            const token = response?.data?.token;
+            const access_token = response?.data?.access_token;
             const user = response?.data?.user;
-
-            setAuth({ user, token });
-            navigate('/');
+            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('access_token', access_token);
+            setAuth({ user, access_token });
+            setIsUnexpired(true);
+            navigate(from);
         } catch (error) {
             if (!error?.response) {
                 console.log('No Serve Response');

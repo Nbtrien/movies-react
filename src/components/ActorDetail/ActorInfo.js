@@ -1,5 +1,6 @@
 import styles from './actor.module.scss';
 import classNames from 'classnames/bind';
+import { memo } from 'react';
 const cx = classNames.bind(styles);
 const ActorInfo = ({ actor }) => {
     return (
@@ -16,7 +17,7 @@ const ActorInfo = ({ actor }) => {
                     Giới tính: <span className={cx('actor-value')}>{actor.gender}</span>
                 </p>
                 <p className={cx('actor-pro')}>
-                    Quốc tịch: <span className={cx('actor-value')}>{actor.country_id}</span>
+                    Quốc tịch: <span className={cx('actor-value')}>{actor.country.name}</span>
                 </p>
                 <p className={cx('actor-pro')}>
                     <span className={cx('actor-value')} dangerouslySetInnerHTML={{ __html: actor.story }}></span>
@@ -26,4 +27,4 @@ const ActorInfo = ({ actor }) => {
     );
 };
 
-export default ActorInfo;
+export default memo(ActorInfo);

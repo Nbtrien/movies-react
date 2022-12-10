@@ -6,7 +6,7 @@ import MovieBlock from '../components/MovieBlock';
 import { movieCategory } from '../api/movieApi';
 
 function Home() {
-    document.title = 'AC Phim | Phim mới | Phim hay trọn bộ';
+    
     return (
         <div className='home' id='page-content'>
             <MovieSlider />

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import className from 'classnames/bind';
 import styles from './tab.module.scss';
 
@@ -47,4 +47,4 @@ const Tab = ({ tab }) => {
     );
 };
 
-export default Tab;
+export default memo(Tab);

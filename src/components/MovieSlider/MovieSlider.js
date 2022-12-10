@@ -18,6 +18,7 @@ function MovieSlide() {
             const params = {
                 keyword: movieType.new_movie,
                 page: 1,
+                limit: 12,
             };
             try {
                 const response = await movieApi.getMovies({ params });
