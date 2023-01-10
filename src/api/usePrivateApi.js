@@ -88,6 +88,10 @@ const usePrivateApi = () => {
             const url = 'tags?' + params;
             return axiosPrivate.delete(url);
         },
+        deleteComment: (id) => {
+            const url = 'comment/' + id;
+            return axiosPrivate.delete(url);
+        },
     };
 
     return privateApi;

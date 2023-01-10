@@ -22,6 +22,7 @@ import CreateEpisode from '../components/admin/CreateEpisode';
 import AddActor from '../components/admin/AddActor/AddActor';
 import Series from '../components/admin/Series';
 import CreateSeries from '../components/admin/CreateSeries';
+import Comment from '../components/admin/Comment';
 
 const publicRoutes = [
     {
@@ -127,10 +128,10 @@ var adminRoutes = [
         sidebar: true,
     },
     {
-        path: '/directors',
-        name: 'Đạo diễn',
-        icon: 'nc-icon nc-badge',
-        component: DashBoard,
+        path: '/comments',
+        name: 'Bình luận',
+        icon: 'nc-icon nc-paper',
+        component: Comment,
         defautpath: '/admin',
         layout: AdminLayout,
         sidebar: true,

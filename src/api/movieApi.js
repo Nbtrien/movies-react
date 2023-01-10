@@ -102,6 +102,10 @@ const movieApi = {
         const url = 'series';
         return axiosClient.get(url, params);
     },
+    getAllComments: (params) => {
+        const url = 'comments';
+        return axiosClient.get(url, params);
+    },
 };
 
 export default movieApi;

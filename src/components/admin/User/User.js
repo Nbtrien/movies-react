@@ -22,17 +22,19 @@ const User = () => {
     }, []);
 
     useEffect(() => {
-        const theads = ['Tên', 'Email', 'Ngày tạo', 'Quyền'];
+        const theads = ['STT', 'Tên', 'Email', 'Ngày tạo', 'Tác vụ'];
         const tfbody = [];
 
         const setProps = () => {
             users.map((user, index) => {
                 const item = [];
 
+                item.push(index + 1);
                 item.push(user.name);
                 item.push(user.email);
                 item.push(user.created_at);
-                item.push(user.role.name);
+                let text = `<a href=''><i class="fas fa-fw fa-trash-alt"></i><span>Xóa</span></a>`;
+                item.push(text);
 
                 tfbody.push(item);
             });

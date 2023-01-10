@@ -23,7 +23,7 @@ const Movie = () => {
     }, []);
 
     useEffect(() => {
-        const theads = ['Phim', 'Danh mục', 'Thể loại', 'Lượt xem', 'Tác vụ'];
+        const theads = ['STT', 'Phim', 'Danh mục', 'Thể loại', 'Lượt xem', 'Tác vụ'];
         const tfbody = [];
 
         const setProps = () => {
@@ -31,6 +31,7 @@ const Movie = () => {
                 const item = [];
                 let text = '';
 
+                item.push(index + 1);
                 item.push(movie.name);
                 item.push(movie.category);
                 const genres = movie.genres.reduce((total, genre) => {
@@ -68,7 +69,7 @@ const Movie = () => {
             <Card className='card-plain'>
                 <CardHeader>
                     <CardTitle tag='h4'>Quản lý phim</CardTitle>
-                    <span className='card-category'>Danh sách phim ({movies.length})</span>
+                    <span className='card-category'>Danh sách phim ({movies?.length})</span>
                     <span className='right-card-link'>
                         <Link to='/admin/movies/create'>
                             <i class='fas fa-fw fa-plus-circle'></i>

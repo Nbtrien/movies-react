@@ -19,7 +19,7 @@ const Series = () => {
     }, []);
 
     useEffect(() => {
-        const theads = ['Series', 'Danh sách phim', 'Lượt xem', 'Tác vụ'];
+        const theads = ['STT', 'Series', 'Danh sách phim', 'Lượt xem', 'Tác vụ'];
         const tfbody = [];
 
         const setProps = () => {
@@ -27,6 +27,7 @@ const Series = () => {
                 const item = [];
                 let text = '';
 
+                item.push(index + 1);
                 item.push(serie.name);
                 const movies = serie.movies.reduce((total, movie) => {
                     return total + movie.name + ', ';

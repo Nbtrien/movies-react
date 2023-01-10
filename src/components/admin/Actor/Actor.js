@@ -24,13 +24,14 @@ const Actor = () => {
     }, []);
 
     useEffect(() => {
-        const theads = ['Tên', 'Ngày sinh', 'Giới tính', 'Phim tham gia', 'Tác vụ'];
+        const theads = ['STT', 'Tên', 'Ngày sinh', 'Giới tính', 'Phim tham gia', 'Tác vụ'];
         const tfbody = [];
 
         const setProps = () => {
             actors.map((actor, index) => {
                 const item = [];
 
+                item.push(index + 1);
                 item.push(actor.name);
                 item.push(moment(actor.birthday).format('DD/MM/YYYY'));
                 item.push(actor.gender);
