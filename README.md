@@ -9,7 +9,7 @@ Movie Streaming app runs on web platform. This app allows users to browse throug
 3. Bootstrap
 4. React-Icons
 
-### Screenshots
+## Screenshots
 ![Screenshot](https://github.com/Nbtrien/movies-react/blob/main/src/assets/img/screenshot4.png)
 ![Screenshot](https://github.com/Nbtrien/movies-react/blob/main/src/assets/img/screenshot1.png)
 ![Screenshot](https://github.com/Nbtrien/movies-react/blob/main/src/assets/img/screenshot2.png)
