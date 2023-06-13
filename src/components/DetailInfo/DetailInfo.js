@@ -19,7 +19,6 @@ function DetailInfo({ movie }) {
         const checkMovie = async () => {
             try {
                 const response = await privateApi.checkMovie(auth?.user.id, movie.id);
-                console.log(response.data);
                 setIsMyMovie(response.data.status);
             } catch (err) {
                 console.log(err);
@@ -35,7 +34,6 @@ function DetailInfo({ movie }) {
                 user_id: auth.user.id,
                 movie_id: movie.id,
             };
-            console.log(params);
             const response = await privateApi.createUserMovie(params);
             setIsMyMovie(response.data.status);
         } catch (error) {
@@ -44,8 +42,6 @@ function DetailInfo({ movie }) {
             }
         }
     };
-
-    console.log('ismy ' + isMyMovie);
 
     return (
         <div className={cx('row')}>

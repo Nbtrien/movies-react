@@ -17,8 +17,19 @@ export const movieCategory = {
 export const movieGenres = {
     action_movie: 'hành động',
     movie_in_theater: 'chiếu rạp',
-    anime: 'anime',
+    anime: 'hoạt hình',
     cartoon: 'hoạt hình',
+    action: 'hành động',
+    comedy: 'hài hước',
+    romance: 'tình cảm',
+    fantasy: 'viễn tưởng',
+    war: 'chiến tranh',
+    adventure: 'phiêu lưu',
+    thriller: 'hình sự',
+    horror: 'kinh dị',
+    drama: 'tâm lý',
+    kungfu: 'võ thuật',
+    animated: 'hoạt hình',
 };
 
 const movieApi = {
@@ -96,6 +107,10 @@ const movieApi = {
     },
     login: (params) => {
         const url = 'login';
+        return axiosClient.post(url, params);
+    },
+    logout: (params) => {
+        const url = 'register';
         return axiosClient.post(url, params);
     },
     getSeries: (params) => {

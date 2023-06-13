@@ -6,15 +6,14 @@ import MovieBlock from '../components/MovieBlock';
 import { movieCategory } from '../api/movieApi';
 
 function Home() {
-    
     return (
         <div className='home' id='page-content'>
             <MovieSlider />
             <MovieChart />
             <div>
-                <MovieBlock genre='chiếu rạp' />
-                <MovieBlock category={movieCategory.feature_movie} />
-                <MovieBlock category={movieCategory.series_movie} />
+                <MovieBlock type='genre' genre='chiếu rạp' />
+                <MovieBlock type='category' category={movieCategory.feature_movie} />
+                <MovieBlock type='category' category={movieCategory.series_movie} />
             </div>
         </div>
     );

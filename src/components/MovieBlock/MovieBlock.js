@@ -3,8 +3,10 @@ import React, { Fragment, useEffect, useRef, useState } from 'react';
 import movieApi, { movieType, movieCategory } from '../../api/movieApi';
 import BouncingLoader from '../BoucingLoader';
 import MovieCart from '../MovieCard';
+import { Link } from 'react-router-dom';
 
 import styles from './movieblock.module.scss';
+import { stringToSlug } from '../../constants/MovieType';
 
 const cx = classNames.bind(styles);
 function MovieBlock(props) {
@@ -33,9 +35,16 @@ function MovieBlock(props) {
             <div className={cx('title-wrapper')}>
                 <h3 className={cx('inline-til')}>{props.category || `Phim ${props.genre}`} mới</h3>
                 <span>
-                    <a className={cx('link-more')} href=''>
+                    <Link
+                        className={cx('link-more')}
+                        to={`/${props.type}/${
+                            (props.category && stringToSlug(props.category)) ||
+                            (props.genre && stringToSlug(props.genre))
+                        }`}
+                    >
                         Xem tất cả{' '}
-                    </a>
+                    </Link>
+                    {/* </a> */}
                 </span>
             </div>
             <div className={cx('cl-div')}></div>

@@ -29,8 +29,9 @@ function Vote({ movie_id, avgrating }) {
             const params = {
                 user_id: auth?.user?.id,
                 movie_id: movie_id,
-                value: checked,
+                value: parseInt(checked),
             };
+            console.log(params);
             const response = await privateApi.addVote(params);
             console.log(response.data);
         };

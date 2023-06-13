@@ -4,6 +4,9 @@ import { Fragment, useState } from 'react';
 import styles from '../../layouts/LoginLayout/login.module.scss';
 import FormInput from '../FormInput/FormInput';
 import Button from '../Button';
+import useAuth from '../../hooks/useAuth';
+import movieApi from '../../api/movieApi';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -14,6 +17,10 @@ function FormRegister() {
         password: '',
         confirmPassword: '',
     });
+    const { auth, setAuth, setIsUnexpired } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const inputs = [
         {
@@ -43,7 +50,7 @@ function FormRegister() {
             errorMessage: 'Password is invalid',
             label: 'Password',
             required: true,
-            pattern: '(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}',
+            pattern: '.{8,30}',
         },
         {
             id: 4,
@@ -57,8 +64,32 @@ function FormRegister() {
         },
     ];
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        try {
+            const params = {
+                name: values.name,
+                email: values.email,
+                password: values.password,
+            };
+            console.log(params);
+            const response = await movieApi.logout(params);
+
+            const access_token = response?.data?.access_token;
+            const user = response?.data?.user;
+            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('access_token', access_token);
+            setAuth({ user, access_token });
+            setIsUnexpired(true);
+            navigate(from);
+        } catch (error) {
+            if (!error?.response) {
+                console.log('No Serve Response');
+            } else if (error.response?.status === 401) {
+                console.log('Unauthorized');
+                alert('Unauthorized');
+            }
+        }
     };
 
     const onChange = (e) => {

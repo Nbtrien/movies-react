@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../../assets/log3.png';
+import logo from '../../../assets/logomovies.png';
 import './footer.scss';
 
 function Footer() {
@@ -10,7 +10,9 @@ function Footer() {
                     <div className='content'>
                         <div className='footer-grids'>
                             <div className='footer one'>
-                                <img src={logo} />
+                                <div className='footer-logo'>
+                                    <img src={logo} />
+                                </div>
                                 <p>“It is not our abilities that show what we truly are… it is our choices”.</p>
                                 <p className='adam'>Harry Hotter and The chamber of secrets, 2002</p>
                                 <div className='clear'></div>
@@ -20,27 +22,27 @@ function Footer() {
                                 <ul>
                                     <li>
                                         <a className='fb' href='https://www.facebook.com/trien.nguyen.397948'>
-                                            <i></i>Trên Facebook
+                                            <i></i> Facebook
                                         </a>
                                     </li>
                                     <li>
                                         <a className='fb1' href='https://twitter.com/TrienNguyen17'>
-                                            <i></i>Trên Twitter
+                                            <i></i> Twitter
                                         </a>
                                     </li>
                                     <li>
                                         <a className='fb2' href='#'>
-                                            <i></i>Trên Google Plus
+                                            <i></i> Google Plus
                                         </a>
                                     </li>
                                     <li>
                                         <a className='fb3' href='https://www.instagram.com/trien___/?hl=vi'>
-                                            <i></i>Trên Instagram
+                                            <i></i> Instagram
                                         </a>
                                     </li>
                                     <li>
                                         <a className='fb4' href='https://www.pinterest.com/nguyenanchi1919'>
-                                            <i></i>Trên Pinterest
+                                            <i></i> Pinterest
                                         </a>
                                     </li>
                                 </ul>
@@ -49,12 +51,10 @@ function Footer() {
                                 <h3>Thông tin liên lạc</h3>
                                 <ul>
                                     <li>
-                                        AC Phim.com <span>Ngũ Hành Sơn, Đà Nẵng, Việt Nam</span>
+                                        <span>Ngũ Hành Sơn, Đà Nẵng, Việt Nam</span>
                                     </li>
                                     <li>0123456789</li>
-                                    <li>
-                                        <a href='trienbanguyen@gmail.com'>trienbanguyen@gmail.com</a>{' '}
-                                    </li>
+                                    <li>trienbanguyen@gmail.com</li>
                                 </ul>
                             </div>
                             <div className='clear'></div>

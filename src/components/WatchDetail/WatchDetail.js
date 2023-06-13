@@ -19,7 +19,6 @@ function WatchDetail({ movie, episode }) {
         const checkMovie = async () => {
             try {
                 const response = await privateApi.checkMovie(auth?.user.id, movie.id);
-                console.log(response.data);
                 setIsMyMovie(response.data.status);
             } catch (err) {
                 console.log(err);

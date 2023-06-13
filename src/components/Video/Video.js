@@ -3,6 +3,9 @@ import { Player } from 'video-react';
 import movieApi from '../../api/movieApi';
 import { VIDEO_TYPE } from '../../constants/MovieType';
 import BouncingLoader from '../BoucingLoader';
+import ShakaPlayer from 'shaka-player-react';
+import 'shaka-player/dist/controls.css';
+import { useRef } from 'react';
 
 const Video = (props) => {
     let id = props.id;
@@ -35,12 +38,14 @@ const Video = (props) => {
         };
         getVideo();
     }, [props]);
+
     return (
         <>
             {videoUrl ? (
-                <Player key={videoUrl}>
-                    <source src={videoUrl} />
-                </Player>
+                // <Player key={videoUrl}>
+                //     <source src={videoUrl} />
+                // </Player>
+                <ShakaPlayer autoPlay src={videoUrl} />
             ) : (
                 <BouncingLoader />
             )}

@@ -24,7 +24,7 @@ const headerNav = [
     },
     {
         display: 'Phim chiếu rạp',
-        path: '/genre/phim-chieu-rap',
+        path: '/genre/chieu-rap',
     },
     {
         display: 'Anime',

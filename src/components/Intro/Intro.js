@@ -3,6 +3,7 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './intro.module.scss';
+import { stringToSlug } from '../../constants/MovieType';
 
 const cx = classNames.bind(styles);
 
@@ -49,9 +50,15 @@ function Intro({ movie }) {
                 <div className={cx('property')}>Thể loại </div>
                 <div className={cx('value')}>
                     {movie.genres.map((genre, index) => (
-                        <a href='' key={index}>
+                        // <a href='' key={index}>
+                        //     {genre.name + ', '}
+                        // </a>
+                        // <link key={index} to={`/genre/${stringToSlug(genre.name)}`}>
+                        //     {/* {genre.name} */}
+                        // </link>
+                        <Link to={`/genre/${stringToSlug(genre.name)}`} key={index}>
                             {genre.name + ', '}
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </div>

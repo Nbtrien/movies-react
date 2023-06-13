@@ -187,9 +187,18 @@ p.footer-gd a:hover {
     color: #908f8f;
     display: block;
 }
-.footer.two, .footer.one, .footer.footer.three{
-    padding: unset; 
+.footer.two,
+.footer.one,
+.footer.footer.three {
+    padding: unset;
     float: left;
+}
+.footer-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    width: 180px;
+    height: auto;
 }
 #footer a.fb,
 a.fb1,
@@ -236,7 +245,7 @@ a.fb4 {
     background: url('../../../assets/icon3.png') no-repeat 0px 6px;
     padding-left: 38px;
 }
-.footer.three ul li a {
+.footer.three ul li {
     background: url('../../../assets/icon1.png') no-repeat 0px 6px;
     padding-left: 38px;
     display: block;

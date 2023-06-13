@@ -14,7 +14,7 @@ const ROLES = {
 };
 
 function App() {
-    document.title = 'AC Phim | Phim mới | Phim hay trọn bộ';
+    document.title = 'NTMovies - Xem Phim Trực Tuyến';
     return (
         <Router>
             <div className='App'>
